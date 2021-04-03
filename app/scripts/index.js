@@ -1,3 +1,2 @@
-import "./auth"
-
-// Super Mario Brooos
+import "./auth";
+import "./upload";

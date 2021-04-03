@@ -140,3 +140,13 @@ body.user-logged-in #logout-area {
     margin-right: 10px;
     margin-bottom: 10px; 
 }
+
+.previewing #uploadPreview {
+    display: block;
+    margin: 0 auto;
+    height: 200px;
+}
+
+.previewing #photoUploadText, .previewing #uploadPlusSign {
+    display: none;
+}
