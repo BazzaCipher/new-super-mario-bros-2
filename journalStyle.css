@@ -9,7 +9,7 @@
 }
 
 * {
-    font-family: general;
+    font-family:corbel
 }
 
 input[type="file"] {
@@ -47,20 +47,31 @@ input[type="file"] {
     border-radius:30px;
 }
 
+.mainPanel {
+    width: 80%;
+    margin: auto;
+}
+
 .photoUpload {
     border: 15px solid #000000;
     border-radius: 25px;
     margin: auto;
     display: block;
-    width:80%;
     
     padding: 6px 0px;
     cursor: pointer;
     height: 200px;
 }
 
+.date{
+    padding-left: 20px;
+    font-size: 30pt;
+    font-weight: bold;
+    margin-top: 0.2em;
+    margin-bottom: 0.5em;
+}
 h1 {
-    padding-left: 10%;
+    padding-left: 6px;
     font-size: 4vw;
     margin-bottom: 0.2em;
     font-family: title;
@@ -73,7 +84,18 @@ hr {
     background-color:rgb(255, 99, 71);
     margin-top: 0.1em;
     margin-bottom: 30px;
-    width: 85%;
+    width: auto;
     border-style: none;
     height: 50px;
+}
+
+.foodPhoto {
+    object-fit: cover;
+    width: 300px;
+    height: 300px;
+    border: 7px solid #000000;
+    border-radius: 25px;
+    display: inline;
+    margin-right: 10px;
+    margin-bottom: 10px;
 }
