@@ -9,24 +9,26 @@
     </head>
 
     <body>
-        <h1>Food Photo Journal</h1>
-        <div id="login-area">
-            <button id="buttonLogin">Sign in</button>
+        <div class="mainPanel">
+            <h1>Food Photo Journal</h1>
+            <div id="login-area">
+                <button id="buttonLogin">Sign in</button>
+            </div>
+            <div id="logout-area">
+                <div id="userProfilePicture"></div>
+                <h3>Logged in as: <span id="username">Name</span></h3>
+                <button id="buttonLogout">Sign out</button>
+            </div>
+            <hr>
+            <form>
+                <label for="fileUpload" class="photoUpload">
+                    <h3 id="uploadPlusSign">+</h3>
+                    <p id="photoUploadText">Upload photo</p>
+                </label>
+                <input id="fileUpload" type="file" accept=".png,.jpeg,.jpg">
+                <input type="submit" value="Submit Photo" id="submitButton">
+            </form>
+            <hr>
         </div>
-        <div id="logout-area">
-            <div id="userProfilePicture"></div>
-            <h3>Logged in as: <span id="username">Name</span></h3>
-            <button id="buttonLogout">Sign out</button>
-        </div>
-        <hr>
-        <form>
-            <label for="fileUpload" class="photoUpload">
-                <h3 id="uploadPlusSign">+</h3>
-                <p id="photoUploadText">Upload photo</p>
-            </label>
-            <input id="fileUpload" type="file" accept=".png,.jpeg,.jpg">
-            <input type="submit" value="Submit Photo" id="submitButton">
-        </form>
-        <hr>
     </body>
 </html>
