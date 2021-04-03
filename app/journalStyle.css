@@ -73,7 +73,7 @@ button, input[type=submit] {
 h1 {
     padding-left: 6px;
     font-size: 4vw;
-    margin-bottom: 0.2em;
+    margin: 1em auto 0.2em auto;
     font-family: title;
 }
 
@@ -149,4 +149,12 @@ body.user-logged-in #logout-area {
 
 .previewing #photoUploadText, .previewing #uploadPlusSign {
     display: none;
+}
+.navbar {
+    height: 3em;
+    display: block;
+}
+
+body {
+    margin: 0px;
 }
