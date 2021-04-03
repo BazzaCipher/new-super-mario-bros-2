@@ -1,0 +1,64 @@
+@font-face {
+    font-family: "title";
+    src: url("NEON CLUB MUSIC.woff");
+  }
+
+@font-face {
+   font-family: "general";
+   src: url("Clubbed to Life.woff");
+}
+
+* {
+    font-family: general;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+
+
+#uploadPlusSign {
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+    text-align: center;
+    font-size: 250px;
+    font-weight: bold;
+    line-height: 0;
+}
+
+#photoUploadText{
+    text-align: center;
+    font-size: 20pt;
+}
+
+.photoUpload {
+    border: 15px solid #000000;
+    border-radius: 25px;
+    margin: auto;
+    display: block;
+    width:80%;
+    
+    padding: 6px 0px;
+    cursor: pointer;
+    height: 200px;
+}
+
+h1 {
+    padding-left: 10%;
+    font-size: 4vw;
+    margin-bottom: 0.2em;
+    font-family: title;
+}
+
+hr {
+    background: rgb(58,180,74);
+    background: linear-gradient(90deg, rgba(58,180,74,1) 0%, rgba(69,183,252,1) 39%, rgba(106,69,252,1) 85%);
+    display: block;
+    background-color:rgb(255, 99, 71);
+    margin-top: 0.1em;
+    margin-bottom: 30px;
+    width: 85%;
+    border-style: none;
+    height: 50px;
+}
