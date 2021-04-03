@@ -32,6 +32,21 @@ input[type="file"] {
     font-size: 20pt;
 }
 
+#submitButton{
+    display: block;
+    width: 200px;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    background-color:rgb(104, 106, 250);
+    color:white;
+    font-size: 20pt;
+    border: 7px solid black;
+    border-radius:30px;
+}
+
 .photoUpload {
     border: 15px solid #000000;
     border-radius: 25px;
