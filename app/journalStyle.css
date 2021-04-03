@@ -1,15 +1,16 @@
 @font-face {
     font-family: "title";
-    src: url("NEON CLUB MUSIC.woff");
+    src: url("assets/Neon Club Music.woff");
   }
 
 @font-face {
    font-family: "general";
-   src: url("Clubbed to Life.woff");
+   src: url("assets/Clubbed to Life.woff");
 }
 
 * {
     font-family: general;
+    letter-spacing: 2px;
 }
 
 input[type="file"] {
@@ -32,7 +33,7 @@ input[type="file"] {
     font-size: 20pt;
 }
 
-#submitButton{
+button, input[type=submit] {
     display: block;
     width: 200px;
     height: 50px;
@@ -40,11 +41,11 @@ input[type="file"] {
     margin-right: auto;
     margin-top: 20px;
     margin-bottom: 40px;
-    background-color:rgb(104, 106, 250);
-    color:white;
+    background-color: rgb(104, 106, 250);
+    color: white;
     font-size: 20pt;
     border: 7px solid black;
-    border-radius:30px;
+    border-radius: 30px;
 }
 
 .photoUpload {
@@ -76,4 +77,32 @@ hr {
     width: 85%;
     border-style: none;
     height: 50px;
+}
+
+#logout-area {
+    display: none;
+}
+body.user-logged-in #login-area {
+    display: none;
+}
+body.user-logged-in #logout-area {
+    display: block;
+}
+
+#login-area, #logout-area {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#logout-area h3 {
+    text-align: center;
+}
+
+#userProfilePicture {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+    margin: auto;
 }
