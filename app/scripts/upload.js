@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 method: "POST",
                 body,
                 headers: new Headers({
-                    'X-Firebase-Token': token
+                    'X-Firebase-Token': token,
                     'Content-Type': 'multipart/form-data'
                 })
             });
