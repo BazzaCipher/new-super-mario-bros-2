@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
             uploadPreview.src = currentFileURL;
         } else {
             uploadForm.classList.remove("previewing");
+            uploadPreview.src = "";
         }
     }
 
@@ -44,6 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
         } catch {
             showModal("uploadError")
         }
+
         if (response.status != 200) {
             console.error(response);
             showModal("uploadError");

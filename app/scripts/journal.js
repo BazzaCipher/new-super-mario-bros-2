@@ -21,7 +21,12 @@ export function setup() {
         console.log(data.photos)
         for (let [time, photoId] of Object.entries(data.photos)) {
             let date = new Date(Number(time));
-            let dateStr = `${months[String(date.getFullYear())]} ${date.getMonth()}, ${date.getDate()}`;
+            let [y, m, d] = [
+                String(date.getFullYear()),
+                date.getMonth(),
+                String(date.getDate()).padStart(2, "0")
+            ];
+            let dateStr = `${months[m]} ${d}, ${y}`;
             let photos = photosByDate.get(dateStr) || [];
             photos.push(photoId);
             photosByDate.set(dateStr, photos);
