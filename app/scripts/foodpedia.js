@@ -1,4 +1,7 @@
 import firebase from "firebase/app";
+import "firebase/firestore";
+
+import "./firebase";
 
 document.addEventListener("DOMContentLoaded", () => {
     if (!window.location.pathname.includes("foodPedia")) return
