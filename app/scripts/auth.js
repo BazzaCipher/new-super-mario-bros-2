@@ -43,3 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
         firebase.auth().signOut();
     });
 });
+
+export async function getToken() {
+    return await firebase.auth().currentUser.getIdToken(true);
+}
