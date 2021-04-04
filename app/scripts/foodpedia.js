@@ -5,19 +5,18 @@ import "./auth";
 import "./firebase";
 
 const db = firebase.firestore().collection('foodimals')
-console.log(db.path)
 
 document.addEventListener("DOMContentLoaded", async () => {
     if (!window.location.pathname.includes("foodPedia")) return
 
     let table = document.querySelector("#foodpediaTable")
 
-    const foodimallist = (await db.get()).docs
+    const foodimallist = await db.get()
     console.log(foodimallist)
 
     const owned = (await db.get())
 
-    for (let foodimal of foodimallist) {
+    for (let foodimal of foodimallistdocs) {
         let row = document.createElement("tr");
         let imgCell = document.createElement("td");
         let image = new Image();
