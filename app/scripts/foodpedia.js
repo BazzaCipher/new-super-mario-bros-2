@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const owned = (await db.get())
 
-    for (let foodimal of foodimallistdocs) {
+    for (let foodimal of foodimallist.docs) {
         let row = document.createElement("tr");
         let imgCell = document.createElement("td");
         let image = new Image();
