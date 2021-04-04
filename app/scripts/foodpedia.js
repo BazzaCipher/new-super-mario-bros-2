@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let table = document.querySelector("#foodpediaTable")
 
+    console.log(db)
     const foodimallist = db.listDocuments()
 
     for (let foodimal of foodimallist) {
