@@ -166,7 +166,7 @@ body.user-logged-in #logout-area {
 }
 
 .modalBackground {
-    display: none;
+    display: block;
     position: fixed;
     width: 100%;
     height: 100%;
@@ -191,6 +191,23 @@ body.user-logged-in #logout-area {
     padding: 0;
     margin:0;
 }
+
+#modalClose {
+    border: none;
+    background: none;
+    padding: 0;
+    margin:0;
+    float:right;   
+}
+
+#modalCloseImg {
+    width:30px;
+}
+
+#initialHelp, #unlockFoodimal, #foodPhotoView {
+    display: none 
+}
+
 
 .previewing #uploadPreview {
     display: block;
