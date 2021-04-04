@@ -1,3 +1,5 @@
+import firebase from "firebase/app";
+
 document.addEventListener("DOMContentLoaded", async () => {
     if (!window.location.pathname.includes("foodPedia")) return
 
