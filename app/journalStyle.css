@@ -8,8 +8,14 @@
    src: url("assets/Clubbed to Life.woff");
 }
 
+
+@font-face {
+    font-family: "lemonMilk";
+    src: url("assets/LEMONMILK-Medium.woff");
+ }
+
 * {
-    font-family: Corbel;
+    font-family: LemonMilk;
 }
 
 input[type="file"] {
@@ -19,6 +25,7 @@ input[type="file"] {
 
 
 #uploadPlusSign {
+    font-family: corbel;
     margin-top: 0.3em;
     margin-bottom: 0.3em;
     text-align: center;
@@ -40,10 +47,11 @@ button, input[type=submit] {
     margin-right: auto;
     margin-top: 20px;
     margin-bottom: 40px;
-    background-color: rgb(104, 106, 250);
+    background: rgb(204,150,62);
+    background: linear-gradient(90deg, rgba(204,150,62,1) 0%, rgba(252,69,167,1) 100%);
     color: white;
-    font-size: 20pt;
-    border: 7px solid black;
+    font-size: 15pt;
+    border: none;
     border-radius: 30px;
 }
 
@@ -119,27 +127,23 @@ body.user-logged-in #logout-area {
     margin: auto;
 }
 
-.foodPhoto {
-    object-fit: cover;
-    width: 300px;
-    height: 300px;
+.foodimal,.foodPhoto{
     border: 7px solid #000000;
     border-radius: 25px;
     display: inline;
     margin-right: 10px;
     margin-bottom: 10px;
+    width: 300px;
+    height: 300px;
+}
+
+.foodPhoto {
+    object-fit: cover;
+
 }
 
 .foodimal {
     object-fit:contain;
-    width: 300px;
-    height: 300px;
-    border: 7px solid #000000;
-    border-radius: 25px;
-    display: inline;
-    display:initial;
-    margin-right: 10px;
-    margin-bottom: 10px; 
 }
 
 .modalBackground {
@@ -147,10 +151,11 @@ body.user-logged-in #logout-area {
     position: fixed;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.328);
+    background-color: rgba(0, 0, 0, 0.692);
     left:0;
     top:0;
     z-index:1;
+    overflow:hidden;
 }
 
 .modalContent{
@@ -158,6 +163,7 @@ body.user-logged-in #logout-area {
     border: none;
     padding: 30px;
     width: 70%;
+    margin: 10% auto;
 }
 
 .modalButton {
