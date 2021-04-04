@@ -4,6 +4,7 @@ import { showModal } from "./modal";
 let currentFileURL = null
 
 document.addEventListener("DOMContentLoaded", () => {
+    if (!window.location.pathname.includes("photoJournal")) return
     const uploadForm = document.querySelector("#uploadForm");
     const fileUpload = document.querySelector("#fileUpload");
     const uploadPreview = document.querySelector("#uploadPreview");
@@ -40,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 body,
                 headers: new Headers({
                     'X-Firebase-Token': token
-                    // Content-Type??
+                    'Content-Type': 'multipart/form-data'
                 })
             });
         } catch {

@@ -13,10 +13,12 @@ export let id = null;
 firebase.auth().onAuthStateChanged(user => {
     if (user) {
         // Logged in
-        isLoggedIn = true
-        id = user.uid
+        isLoggedIn = true;
+        id = user.uid;
         console.log("[auth] login done");
         document.body.classList.add("user-logged-in");
+
+        if (!window.location.pathname.includes("photoJournal")) return;
 
         const username = document.querySelector("#username");
         const profilePicture = document.querySelector("#userProfilePicture");
@@ -33,11 +35,15 @@ firebase.auth().onAuthStateChanged(user => {
         isLoggedIn = false
         id = null
         console.log("[auth] logout done");
+
+        if (!window.location.pathname.includes("photoJournal")) return;
         document.body.classList.remove("user-logged-in");
     }
 });
 
 document.addEventListener("DOMContentLoaded", () => {
+    if (!window.location.pathname.includes("photoJournal")) return
+
     const loginButton = document.querySelector("#buttonLogin");
     const logoutButton = document.querySelector("#buttonLogout");
 
