@@ -22,6 +22,12 @@
 
 /** General styles **/
 
+body{
+    background: rgb(224,37,194);
+    background: linear-gradient(0deg, rgba(224,37,194,1) 0%, rgba(34,193,195,1) 29%, rgba(90,147,195,1) 62%, rgba(224,37,194,1) 100%);
+
+}
+
 a {
     color: black;
     text-decoration: none;
@@ -47,14 +53,24 @@ td {
 .mainPanel {
     width: 80%;
     margin: auto;
+    background-color: white;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.mainPanel::after {
+    content: "";
+    clear: both;
+    display: table;
 }
 
 
 h1 {
     padding-left: 6px;
     font-size: 4vw;
-    margin: 1em auto 0.2em auto;
+    margin: 0 auto 0.2em auto;
     font-family: title;
+    padding-top: 50px;
 }
 
 hr {
