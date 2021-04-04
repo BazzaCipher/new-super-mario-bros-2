@@ -1,5 +1,5 @@
 import { isLoggedIn, getToken } from "./auth";
-import { randomString } from "./util";
+import { showModal } from "./modal";
 
 let currentFileURL = null
 
@@ -23,9 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     uploadForm.addEventListener("submit", async ev => {
         ev.preventDefault();
+
         if (!isLoggedIn) {
-            console.log("[imageupload] Must be logged in to upload image");
-            // ^ this should probably be visible to the user somehow
+            showModal("uploadSignedOut")
             return;
         }
 
@@ -33,17 +33,22 @@ document.addEventListener("DOMContentLoaded", () => {
         body.set("image", fileUpload.files[0]);
         let token = await getToken();
 
-        let response = await fetch("https://reduce-fidelity.herokuapp.com", {
-            method: "POST",
-            body,
-            headers: new Headers({
-                'X-Firebase-Token': token
-                // Content-Type??
-            })
-        });
-
+        let response;
+        try {
+            response = await fetch("https://reduce-fidelity.herokuapp.com", {
+                method: "POST",
+                body,
+                headers: new Headers({
+                    'X-Firebase-Token': token
+                    // Content-Type??
+                })
+            });
+        } catch {
+            showModal("uploadError")
+        }
         if (response.status != 200) {
-            // display something to the user
+            console.error(response);
+            showModal("uploadError");
         }
 
         fileUpload.value = null;

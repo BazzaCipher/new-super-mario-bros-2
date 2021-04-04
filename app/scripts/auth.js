@@ -2,6 +2,7 @@ import firebase from "firebase/app";
 import "firebase/auth";
 
 import "./firebase";
+import { showModal } from "./modal";
 
 const authProvider = new firebase.auth.GoogleAuthProvider();
 
@@ -20,6 +21,11 @@ firebase.auth().onAuthStateChanged(user => {
         const profilePicture = document.querySelector("#userProfilePicture");
         username.textContent = user.displayName;
         profilePicture.style.backgroundImage = `url(${user.photoURL})`;
+
+        // Show the welcome modal if this is a new user
+        if (user.metadata.creationTime === user.metadata.lastSignInTime) {
+            showModal("initialHelp");
+        }
     } else {
         // Not logged in
         isLoggedIn = false

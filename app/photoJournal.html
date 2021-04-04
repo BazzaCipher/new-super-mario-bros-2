@@ -10,17 +10,24 @@
 
     <body>
 
-        <div class = "modalBackground" id = "genericModal">
-            <div class="modalContent" id= "initialHelp">
+        <div class="modalBackground" id="genericModal">
+            <div class="modalContent" id="initialHelp">
                 <h2>Welcome!</h2>
                 <p>This website is designed to bring awareness to your diet. During lockdown, there a habit has a appeared of eating the same processed foods every day to save energy. Here, we ask you to keep a "photo journal" of every meal you eat, that way, you can reflect on what foods you commonly eat and any deficiencies in your diet.</p>
                 <p>You can upload photos using the input field at the top of this page.</p>
             </div>
-            <div class="modalContent" id= "foodPhotoView">
+            <div class="modalContent" id="foodPhotoView">
                 ?
             </div>
-            <div class="modalContent" id = "unlockFoodimal">
+            <div class="modalContent" id="unlockFoodimal">
                 ?
+            </div>
+            <div class="modalContent" id="uploadError">
+                <h2>Error</h2>
+                <p>Unfortunately, there was an error uploading your photo. Try again in a few minutes.</p>
+            </div>
+            <div class="modalContent" id="uploadSignedOut">
+                <p>You must be signed in to upload a photo.</p>
             </div>
         </div>
         <div class="mainPanel">
@@ -56,9 +63,9 @@
                 <input type="submit" value="Submit photo" id="submitButton">
             </form>
             <hr>
-            <button class ="modalButton" id ="k">
-                <img src="assets/test.jpg" class = "foodPhoto">
-            </button>
+            <!-- Hidden for now: <button class="modalButton"></button> -->
+            <img src="assets/test.jpg" class="foodPhoto">
+            <img src="assets/test.jpg" class="foodPhoto">
         </div>
     </body>
 </html>
