@@ -9,7 +9,14 @@
     </head>
 
     <body>
-        <div class = "modalBackground">
+        <div class = "modalBackground" id = "initialModal">
+            <div class="modalContent">
+                <h2>Welcome!</h2>
+                <p>This website is designed to bring awareness to your diet. During lockdown, there a habit has a appeared of eating the same processed foods every day to save energy. Here, we ask you to keep a "photo journal" of every meal you eat, that way, you can reflect on what foods you commonly eat and any deficiencies in your diet.</p>
+                <p>You can upload photos using the input field at the top of this page.</p>
+            </div>
+        </div>
+        <div class = "modalBackground" id = "genericModal">
             <div class="modalContent">
                 ?
             </div>
@@ -21,7 +28,7 @@
             </div>
             <div id="logout-area">
                 <div id="userProfilePicture"></div>
-                <h3>Logged in as: <span id="username">Name</span></h3>
+                <h4>Logged in as: <span id="username">Name</span></h4>
                 <button id="buttonLogout">Sign out</button>
             </div>
             <table class = "linkMenu">
@@ -47,7 +54,7 @@
                 <input type="submit" value="Submit photo" id="submitButton">
             </form>
             <hr>
-            <button class ="modalButton">
+            <button class ="modalButton" id ="k">
                 <img src="assets/test.jpg" class = "foodPhoto">
             </button>
         </div>

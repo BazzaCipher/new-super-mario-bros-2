@@ -50,7 +50,7 @@ td{
     margin-bottom: 0.3em;
     text-align: center;
     font-size: 250px;
-    font-weight: bold;
+    font-weight: normal;
     line-height: 0;
 }
 
@@ -80,8 +80,9 @@ button, input[type=submit] {
     margin: auto;
 }
 
+
 .photoUpload {
-    border: 15px solid #000000;
+    border: 10px solid #000000;
     border-radius: 25px;
     margin: auto;
     display: block;
@@ -134,7 +135,7 @@ body.user-logged-in #logout-area {
     margin-right: auto;
 }
 
-#logout-area h3 {
+#logout-area h4 {
     text-align: center;
 }
 
