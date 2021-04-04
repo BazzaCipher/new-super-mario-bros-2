@@ -10,10 +10,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     let table = document.querySelector("#foodpediaTable")
 
-    const foodimallist = await db.get()
+    const foodimallist = (await db.get()).docs
     console.log(foodimallist)
 
-    for (let foodimal of foodimallist.docs) {
+    for (let foodimal of foodimallist) {
         let row = document.createElement("tr");
         let imgCell = document.createElement("td");
         let image = new Image();
