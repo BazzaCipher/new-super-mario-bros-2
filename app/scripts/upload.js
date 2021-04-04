@@ -30,18 +30,14 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        let body = new FormData();
-        body.set("image", fileUpload.files[0]);
         let token = await getToken();
-
         let response;
         try {
             response = await fetch("https://reduce-fidelity.herokuapp.com", {
                 method: "POST",
-                body,
+                body: fileUpload.files[0],
                 headers: new Headers({
-                    'X-Firebase-Token': token,
-                    'Content-Type': 'multipart/form-data'
+                    'X-Firebase-Token': token
                 })
             });
         } catch {
