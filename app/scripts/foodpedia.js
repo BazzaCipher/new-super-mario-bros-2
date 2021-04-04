@@ -3,6 +3,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     let table = document.querySelector("#foodpediaTable")
 
+    const db = firebase.firestore()
+
+    db.collection('foodimals')
+
     let res = await fetch("/assets/foods/foodlist.json");
     let json = await res.json();
     for (let food of json.foods) {
