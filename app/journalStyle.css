@@ -213,6 +213,18 @@ body.user-logged-in #logout-area {
     margin: 0;
 }
 
+.modalClose {
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    float: right;
+}
+
+#modalCloseImg {
+    width: 30px;
+}
+
 /** Upload preview **/
 
 .previewing #uploadPreview {
