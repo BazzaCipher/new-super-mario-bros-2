@@ -37,7 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 method: "POST",
                 body: fileUpload.files[0],
                 headers: new Headers({
-                    'X-Firebase-Token': token
+                    'X-Firebase-Token': token,
+                    'Content-Type': 'application/octet-stream'
                 })
             });
         } catch {
