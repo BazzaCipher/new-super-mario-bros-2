@@ -1,5 +1,11 @@
 import firebase from "firebase/app";
 
+// Initialise firebase
+firebase.initializeApp({
+    credential: firebase.credential.applicationDefault(),
+    databaseURL: 'https://hackiethon-food-photo-journal.firebaseio.com'
+});
+
 document.addEventListener("DOMContentLoaded", () => {
     if (!window.location.pathname.includes("foodPedia")) return
 
