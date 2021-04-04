@@ -3,13 +3,14 @@ import "firebase/firestore";
 
 import "./firebase";
 
+const db = firebase.firestore().collection('foodimals')
+
 document.addEventListener("DOMContentLoaded", () => {
     if (!window.location.pathname.includes("foodPedia")) return
 
     let table = document.querySelector("#foodpediaTable")
 
-    const db = firebase.firestore()
-    const foodimallist = db.collection('foodimals').listDocuments()
+    const foodimallist = db.listDocuments()
 
     for (let foodimal of foodimallist) {
         let row = document.createElement("tr");
