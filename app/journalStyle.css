@@ -176,7 +176,8 @@ body.user-logged-in #logout-area {
     border-radius: 50%;
     background-position: center;
     background-size: cover;
-    margin: auto;
+    margin: 0 auto;
+    display: block;
 }
 
 /** Foodimals/Food photos **/

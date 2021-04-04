@@ -42,7 +42,7 @@
                 <button id="buttonLogin">Sign in</button>
             </div>
             <div id="logout-area">
-                <div id="userProfilePicture"></div>
+                <img id="userProfilePicture" referrerpolicy="no-referrer"></img>
                 <h4>Logged in as: <span id="username">Name</span></h4>
                 <button id="buttonLogout">Sign out</button>
             </div>
@@ -71,10 +71,13 @@
                 <input type="submit" value="Submit photo" id="submitButton">
             </form>
             <hr>
-            <!-- Hidden for now: <button class="modalButton"></button> -->
-            <h2>Previous photos:</h2>
-            <img src="assets/test.jpg" class="foodPhoto">
-            <img src="assets/test.jpg" class="foodPhoto">
+            <div class="previousPhotos">
+                <!-- Hidden for now: <button class="modalButton"></button> -->
+                <h2>Previous photos:</h2>
+                <!-- <p class="date">April 4, 2021</p>
+                <img src="assets/test.jpg" class="foodPhoto">
+                <img src="assets/test.jpg" class="foodPhoto"> -->
+            </div>
         </div>
     </body>
 </html>
