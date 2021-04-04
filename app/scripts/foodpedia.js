@@ -1,6 +1,7 @@
 import firebase from "firebase/app";
 import "firebase/firestore";
 
+import "./auth";
 import "./firebase";
 
 const db = firebase.firestore().collection('foodimals')
@@ -12,6 +13,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const foodimallist = (await db.get()).docs
     console.log(foodimallist)
+
+    const owned = (await db.get())
 
     for (let foodimal of foodimallist) {
         let row = document.createElement("tr");
