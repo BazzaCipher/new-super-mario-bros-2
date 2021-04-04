@@ -1,7 +1,7 @@
 import firebase from "firebase/app";
 import "firebase/firestore";
 
-import "./auth";
+import { id as userId } from "./auth";
 import "./firebase";
 
 const db = firebase.firestore().collection('foodimals')
@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     let table = document.querySelector("#foodpediaTable")
 
+    console.log(db.doc(userId))
     const foodimallist = (await db.get()).docs
     console.log(foodimallist)
 
