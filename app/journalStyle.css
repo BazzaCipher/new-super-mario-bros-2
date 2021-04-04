@@ -124,6 +124,16 @@ button, input[type=submit] {
     font-size: 15pt;
     border: none;
     border-radius: 30px;
+    transition: box-shadow 0.25s;
+    outline: none;
+}
+
+button:hover, input[type=submit]:hover {
+    box-shadow: 0 0 8px 0 #b8b8b8;
+}
+
+button:active, input[type=submit]:active {
+    box-shadow: 0 0 12px 0px #7b7b7b;
 }
 
 /** Photo feed **/

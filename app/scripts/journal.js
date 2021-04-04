@@ -33,6 +33,8 @@ export function setup() {
         }
 
         let previousPhotos = document.querySelector(".previousPhotos");
+        // Clear existing elements as we're regenerating the journal
+        previousPhotos.innerHTML = "";
 
         for (let date of photosByDate.keys()) {
             let dateHeading = document.createElement("p");
