@@ -2,7 +2,8 @@ import firebase from "firebase/app";
 import "firebase/auth";
 
 import "./firebase";
-import { setup } from "./journal";
+import { setup as setupJournal } from "./journal";
+import { setup as setupFoodpedia } from "./foodpedia"
 import { showModal } from "./modal";
 
 const authProvider = new firebase.auth.GoogleAuthProvider();
@@ -10,7 +11,7 @@ const authProvider = new firebase.auth.GoogleAuthProvider();
 export let isLoggedIn = false;
 export let id = null;
 
-firebase.auth().onAuthStateChanged(user => {
+firebase.auth().onAuthStateChanged(async user => {
     if (user) {
         // Logged in
         isLoggedIn = true;
@@ -18,7 +19,9 @@ firebase.auth().onAuthStateChanged(user => {
         console.log("[auth] login done");
         document.body.classList.add("user-logged-in");
 
+        setupFoodpedia();
         if (!window.location.pathname.includes("photoJournal")) return;
+        setupJournal();
 
         const username = document.querySelector("#username");
         const profilePicture = document.querySelector("#userProfilePicture");
@@ -29,11 +32,10 @@ firebase.auth().onAuthStateChanged(user => {
         if (user.metadata.creationTime === user.metadata.lastSignInTime) {
             showModal("initialHelp");
         }
-        setup();
     } else {
         // Not logged in
-        isLoggedIn = false
-        id = null
+        isLoggedIn = false;
+        id = null;
         console.log("[auth] logout done");
 
         if (!window.location.pathname.includes("photoJournal")) return;
@@ -42,7 +44,7 @@ firebase.auth().onAuthStateChanged(user => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-    if (!window.location.pathname.includes("photoJournal")) return
+    if (!window.location.pathname.includes("photoJournal")) return;
 
     const loginButton = document.querySelector("#buttonLogin");
     const logoutButton = document.querySelector("#buttonLogout");

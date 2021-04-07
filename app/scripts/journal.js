@@ -9,16 +9,14 @@ const months = ["January", "February", "March", "April", "May", "June", "July",
     "August", "September", "November", "December"]
 
 const db = firebase.firestore().collection("users");
-const ref = firebase.storage().ref().child("image")
+const ref = firebase.storage().ref().child("image");
 
 export function setup() {
     db.doc(userId).onSnapshot(async doc => {
-        console.log(doc, doc.data());
         let data = doc.data();
 
         // Organise the photos by day
         let photosByDate = new Map();
-        console.log(data.photos)
         for (let [time, photoId] of Object.entries(data.photos)) {
             let date = new Date(Number(time));
             let [y, m, d] = [

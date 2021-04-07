@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Shows a modal. Currently this closes any modals that are currently open.
-// The modal will also close automatically after 7s.
+// The modal will also close automatically after 12s.
 export function showModal(id) {
     modalBackground.style.display = "block";
     for (let modal of modalBackground.children) {
@@ -21,14 +21,14 @@ export function showModal(id) {
     let modal = document.querySelector(`.modalContent#${id}`)
     modal.style.display = "block";
 
+    // Keep a variable with a random value so we know if another modal
+    // has been shown in the meantime
     let stateId = Math.random();
     modalStateId = stateId;
     setTimeout(() => {
-        // Keep a variable with a random value so we know if another modal
-        // has been shown in the meantime
         if (modalStateId == stateId) {
             modal.style.display = "none";
             modalBackground.style.display = "none";
         }
-    }, 7000);
+    }, 12000);
 }
