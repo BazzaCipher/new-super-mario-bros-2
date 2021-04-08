@@ -48,7 +48,8 @@ export function setup() {
                 return !(a === x && b === y && c === z)
             })
 
-        for (let date of photoDates) {
+        for (let [y, m, d] of photoDates) {
+            let date = `${months[m]} ${d}, ${y}`;
             let dateHeading = document.createElement("p");
             dateHeading.classList.add("date");
             dateHeading.innerText = date;
