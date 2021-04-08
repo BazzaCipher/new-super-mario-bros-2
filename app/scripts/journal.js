@@ -50,7 +50,7 @@ export function setup() {
             })
 
         for (let [y, m, d] of photoDates) {
-            console.log()
+            console.log([y,m,d])
             let date = `${months[m]} ${d}, ${y}`;
             let dateHeading = document.createElement("p");
             dateHeading.classList.add("date");
