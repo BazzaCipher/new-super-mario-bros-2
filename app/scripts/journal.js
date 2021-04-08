@@ -15,6 +15,9 @@ export function setup() {
     db.doc(userId).onSnapshot(async doc => {
         let data = doc.data();
 
+        // Order the photos by retrieving dates, then sorting
+        let photoDates = []
+
         // Organise the photos by day
         let photosByDate = new Map();
         for (let [time, photoId] of Object.entries(data.photos)) {
@@ -28,13 +31,24 @@ export function setup() {
             let photos = photosByDate.get(dateStr) || [];
             photos.push(photoId);
             photosByDate.set(dateStr, photos);
+
+            photoDates.push([y, m, d])
         }
 
         let previousPhotos = document.querySelector(".previousPhotos");
         // Clear existing elements as we're regenerating the journal
         previousPhotos.innerHTML = "";
 
-        for (let date of photosByDate.keys()) {
+        // Order the dates
+        photoDates = photoDates
+            .sort(([a, b, c], [x, y, z]) => (a > x || b > y || c > z) ? 1: -1)
+            .filter(([a, b, c], i, arr) => {
+                if (i + 1 === arr.length) return
+                let [x, y, z] = arr[i+1]
+                return !(a === x && b === y && c === z)
+            })
+
+        for (let date of photoDates) {
             let dateHeading = document.createElement("p");
             dateHeading.classList.add("date");
             dateHeading.innerText = date;
