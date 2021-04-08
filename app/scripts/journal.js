@@ -49,6 +49,7 @@ export function setup() {
                 return !(a === x && b === y && c === z)
             })
 
+        console.log(photoDates)
         for (let [y, m, d] of photoDates) {
             console.log([y,m,d])
             let date = `${months[m]} ${d}, ${y}`;
