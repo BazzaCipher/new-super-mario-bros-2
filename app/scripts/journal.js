@@ -49,7 +49,7 @@ export function setup() {
                 return !(a === x && b === y && c === z)
             });
 
-        if (reverse) {photoDates = photoDates.reverse()}
+        if (reverse) {photoDates = photoDates.reverse()};
 
         for (let [y, m, d] of photoDates) {
             console.log([y,m,d])
@@ -63,6 +63,7 @@ export function setup() {
                 let el = new Image();
                 el.classList.add("foodPhoto");
                 el.src = url;
+                el.title = date;
                 previousPhotos.appendChild(el);
             }
             previousPhotos.appendChild(document.createElement("hr"));
