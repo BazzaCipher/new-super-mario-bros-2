@@ -32,7 +32,6 @@ export function setup() {
             photos.push(photoId);
             photosByDate.set(dateStr, photos);
 
-            console.log(date)
             photoDates.push([y, m, d])
         }
 
@@ -42,14 +41,13 @@ export function setup() {
 
         // Order the dates
         photoDates = photoDates
-            .sort(([a, b, c], [x, y, z]) => (a > x || b > y || c > z) ? 1: -1)
+            .sort(([a, b, c], [x, y, z]) => (a > x || b > y || c > z) ? -1: 1)
             .filter(([a, b, c], i, arr) => {
                 if (i + 1 === arr.length) return true
                 let [x, y, z] = arr[i+1]
                 return !(a === x && b === y && c === z)
             })
 
-        console.log(photoDates)
         for (let [y, m, d] of photoDates) {
             console.log([y,m,d])
             let date = `${months[m]} ${String(d).padStart(2, "0")}, ${y}`
