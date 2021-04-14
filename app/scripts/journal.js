@@ -14,6 +14,7 @@ const ref = firebase.storage().ref().child("image");
 export function setup() {
     db.doc(userId).onSnapshot(async doc => {
         let data = doc.data();
+        let reverse = false;
 
         // Order the photos by retrieving dates, then sorting
         let photoDates = []
@@ -32,7 +33,7 @@ export function setup() {
             photos.push(photoId);
             photosByDate.set(dateStr, photos);
 
-            photoDates.push([y, m, d])
+            photoDates.push([y, m, d]);
         }
 
         let previousPhotos = document.querySelector(".previousPhotos");
@@ -46,7 +47,9 @@ export function setup() {
                 if (i + 1 === arr.length) return true
                 let [x, y, z] = arr[i+1]
                 return !(a === x && b === y && c === z)
-            })
+            });
+
+        if (reverse) {photoDates = photoDates.reverse()}
 
         for (let [y, m, d] of photoDates) {
             console.log([y,m,d])
