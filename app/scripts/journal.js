@@ -40,6 +40,7 @@ export function setup() {
         // Clear existing elements as we're regenerating the journal
         previousPhotos.innerHTML = "";
 
+        console.log(JSON.stringify(photoDates, 4))
         // Order the dates
         photoDates = photoDates
             .sort(([a, b, c], [x, y, z]) => (a > x || b > y || c > z) ? 1: -1)
@@ -48,6 +49,8 @@ export function setup() {
                 let [x, y, z] = arr[i+1]
                 return !(a === x && b === y && c === z)
             })
+
+        console.log(JSON.stringify(photoDates, 4))
 
         console.log(photoDates)
         for (let [y, m, d] of photoDates) {
