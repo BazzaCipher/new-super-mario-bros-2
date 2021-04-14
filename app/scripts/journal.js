@@ -23,11 +23,11 @@ export function setup() {
         for (let [time, photoId] of Object.entries(data.photos)) {
             let date = new Date(Number(time));
             let [y, m, d] = [
-                String(date.getFullYear()),
+                date.getFullYear(),
                 date.getMonth(),
-                String(date.getDate()).padStart(2, "0")
+                date.getDate()
             ];
-            let dateStr = `${months[m]} ${d}, ${y}`;
+            let dateStr = `${months[m]} ${String(d).padStart(2, "0")}, ${y}`;
             let photos = photosByDate.get(dateStr) || [];
             photos.push(photoId);
             photosByDate.set(dateStr, photos);
@@ -40,7 +40,6 @@ export function setup() {
         // Clear existing elements as we're regenerating the journal
         previousPhotos.innerHTML = "";
 
-        console.log(JSON.stringify(photoDates, 4))
         // Order the dates
         photoDates = photoDates
             .sort(([a, b, c], [x, y, z]) => (a > x || b > y || c > z) ? 1: -1)
