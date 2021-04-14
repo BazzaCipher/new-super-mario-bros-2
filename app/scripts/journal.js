@@ -54,7 +54,7 @@ export function setup() {
         console.log(photoDates)
         for (let [y, m, d] of photoDates) {
             console.log([y,m,d])
-            let date = `${months[m]} ${d}, ${y}`;
+            let date = `${months[m]} ${String(d).padStart(2, "0")}, ${y}`
             let dateHeading = document.createElement("p");
             dateHeading.classList.add("date");
             dateHeading.innerText = date;
