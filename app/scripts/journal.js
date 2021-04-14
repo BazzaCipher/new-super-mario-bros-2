@@ -44,12 +44,10 @@ export function setup() {
         photoDates = photoDates
             .sort(([a, b, c], [x, y, z]) => (a > x || b > y || c > z) ? 1: -1)
             .filter(([a, b, c], i, arr) => {
-                if (i + 1 === arr.length) return
+                if (i + 1 === arr.length) return true
                 let [x, y, z] = arr[i+1]
                 return !(a === x && b === y && c === z)
             })
-
-        console.log(JSON.stringify(photoDates, 4))
 
         console.log(photoDates)
         for (let [y, m, d] of photoDates) {
